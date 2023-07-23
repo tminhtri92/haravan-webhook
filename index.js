@@ -23,7 +23,8 @@ app.post("/hook", (req, res) => {
 })
 
 app.get('/webhook', middleware, (req, res) => {
-  console.log(req)
+  console.log(req.originalUrl)
+
   // validate the request is from haravan
   if (!req.fromHaravan()) {
     return res.status(401).send()
@@ -34,7 +35,7 @@ app.get('/webhook', middleware, (req, res) => {
   res.status(200).send()
 
   const body = req.body
-	console.log(body)
+		console.log(body)
   // process webhook
 })
 
