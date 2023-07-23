@@ -27,7 +27,7 @@ app.post('/webhook', haravanMiddleware, function(req, res) {
   const topic = req.headers?.['x-haravan-topic']
 
   console.log('topic',topic)
-
+  console.log(req.body)
 })
 
 app.post('/webhooks', (req, res) => {
