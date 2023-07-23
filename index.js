@@ -20,7 +20,7 @@ app.post("/hook", (req, res) => {
 
 app.get('/webhook', (req, res) => {
   console.log(req.originalUrl)
-  res.status(200).send()
+  res.status(200).send(req.query?.["hub.challenge"])
 })
 
 app.get("/webhooks", (req, res) => {
