@@ -20,12 +20,6 @@ app.get('/webhook', (req, res) => {
 
 app.post('/webhook', haravanMiddleware, function(req, res) {
 
-  console.log('req.fromHaravan()', req.fromHaravan())
-  // validate the request is from haravan
-  if (!req.fromHaravan()) {
-    return res.status(401).send()
-  }
-
   // send success notification to haravan
   // done before to prevent timeout
   res.status(200).send()
