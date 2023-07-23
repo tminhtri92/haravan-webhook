@@ -18,7 +18,7 @@ app.get('/webhook', (req, res) => {
   res.status(200).send(req.query?.["hub.challenge"])
 })
 
-app.post('/webhook', middleware, function(req, res) {
+app.post('/webhook', haravanMiddleware, function(req, res) {
 
   console.log('req.fromHaravan()', req.fromHaravan())
   // validate the request is from haravan
